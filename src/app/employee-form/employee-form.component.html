@@ -1,0 +1,53 @@
+<form [formGroup]="employeeForm">
+    <div class="form-froup">
+        <input type="hidden" formControlName="id">
+    </div>
+
+    <div class="form-group">
+        <label for="firstName">FirstName:</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName">
+        <span class="help-block"
+            *ngIf="this.employeeForm.get('firstName')?.invalid  && this.employeeForm.get('firstName')?.touched">Please
+            enter valid FirstName</span>
+    </div>
+    <div class="form-group">
+        <label for="lastName">LastName:</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName">
+        <span class="help-block"
+            *ngIf="this.employeeForm.get('lastName')?.invalid  && this.employeeForm.get('lastName')?.touched">Please
+            enter valid LastName</span>
+    </div>
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+        <span class="help-block"
+            *ngIf="this.employeeForm.get('email')?.invalid  && this.employeeForm.get('email')?.touched">
+            <!-- <span  *ngIf="this.employeeForm.get('email').errors['required']">Email is required</span>
+            <span *ngIf="this.employeeForm.get('email').errors['emailDomain']">Email domain should be @gmail.com</span> -->
+            Please enter valid email
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label class="radio-inline" *ngFor="let exp of experience">
+            <input type="radio" name="experience" formControlName="experience" [value]="exp">
+            {{exp}}
+        </label>
+        <span class="help-block"
+            *ngIf="this.employeeForm.get('experience')?.invalid  && this.employeeForm.get('experience')?.touched">Please
+            select Experience</span>
+    </div>
+
+    <!-- <div class="form-group">
+        <label for="contactNo">Contact No:</label>
+        <input type="number" class="form-control" id="contactNo" formControlName="contactNo">
+        <span class="help-block"
+            *ngIf="this.employeeForm.get('contactNo')?.invalid  && this.employeeForm.get('contactNo')?.touched">Please enter
+            valid Contact No</span>
+    </div> -->
+    <button type="submit" class="btn btn-primary " (click)="onSubmit()"
+        [disabled]="this.employeeForm?.invalid">Submit</button>
+
+    <button type="button" class="btn btn-primary " (click)="onReset()">Reset</button>
+
+</form>

@@ -1,0 +1,33 @@
+<header>
+  <h3>Employee Data</h3>
+  <nav>
+      <ul>
+
+          <li>
+              <button class="btn btn-success"
+              [routerLink]="'/employee-form'"
+              (click)="addEmp()"><i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+          </li>
+          <li>
+            <button class="btn btn-primary"
+            [routerLink]="'/employee-form'"
+            (click)="updateEmp()"><i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+        </li>
+          <li>
+              <button class="btn btn-danger" 
+              (click)="deleteEmp()"><i class="fa fa-trash" aria-hidden="true"></i>
+                  </button>
+          </li>
+     
+      </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+

@@ -1,0 +1,46 @@
+.backdrop{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(34, 33, 33, 0.068);
+}
+
+.employee-details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.employeeForm{
+    z-index: 100;
+
+    position: relative;
+  
+}
+
+header{
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-bottom: 10px;
+
+    h3{
+        color: lightgreen;
+    }
+}
+
+ul{
+    list-style-type: none;
+    float: left;
+    margin-bottom: 0;
+}
+
+
+li{
+    display: inline;
+    button{
+        margin: 5px;
+    }
+}
+

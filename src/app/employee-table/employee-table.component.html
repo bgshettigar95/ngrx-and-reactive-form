@@ -1,0 +1,9 @@
+<ag-grid-angular #agGrid 
+style="width: 800px; height: 500px;" 
+class="ag-theme-alpine"
+[rowData]="rowData" 
+[columnDefs]="columnDefs" 
+rowSelection="multiple"
+(rowClicked)=onRowSelected()>
+</ag-grid-angular>
+
